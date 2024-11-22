@@ -1,9 +1,13 @@
-import express from 'express'
-import { ProductControllers } from './product.controller'
+import express from 'express';
+import { ProductControllers } from './product.controller';
 
-const router = express.Router()
+const router = express.Router();
 
 //will call controller fn
-router.post('/create-product', ProductControllers.createProduct)
+router.post('/create-product', ProductControllers.createProduct);
+
+router.get('/', ProductControllers.getAllProducts)
+
+router.get('/:productId', ProductControllers.getSingleProduct)
 
 export const ProductRoutes = router;
